@@ -102,10 +102,10 @@ function displayTodayWeather(){
     console.log(date);
     fullDate.innerHTML = days[date.getDay()]+" "+date.getDate()+" "+monthName[date.getMonth()];
     icon.setAttribute("src", `https:${responseData.current.condition.icon}`)
-    degree.innerHTML = responseData.current.temp_c + "&deg";
+    degree.innerHTML = Math.round(responseData.current.temp_c) + "&deg";
     condition.innerHTML = responseData.current.condition.text;
-    minDegree.innerHTML = responseData.forecast.forecastday[0].day.mintemp_c + "&deg";
-    maxDegree.innerHTML = responseData.forecast.forecastday[0].day.maxtemp_c + "&deg";
+    minDegree.innerHTML = Math.round(responseData.forecast.forecastday[0].day.mintemp_c) + "&deg";
+    maxDegree.innerHTML = Math.round(responseData.forecast.forecastday[0].day.maxtemp_c) + "&deg";
     wind.innerHTML = responseData.current.wind_mph+"mph";
     rain.innerHTML = responseData.forecast.forecastday[0].day.daily_chance_of_rain+"%";
     sunrise.innerHTML = responseData.forecast.forecastday[0].astro.sunrise;
@@ -121,7 +121,7 @@ function displayTodayHourWeather(){
     for (var i=0;i<24;i++){
         time = timeConvert(responseData.forecast.forecastday[0].hour[i].time)
         icon = responseData.forecast.forecastday[0].hour[i].condition.icon;
-        degree = responseData.forecast.forecastday[0].hour[i].temp_c + "&deg";
+        degree = Math.round(responseData.forecast.forecastday[0].hour[i].temp_c) + "&deg";
         cartoona += hourDayData(time, icon, degree);
     }
     hourDayContainer.innerHTML = cartoona;
@@ -140,8 +140,8 @@ function displayDaysWeather(){
         date = fulldate.split('-');
         date = date[2]+"/"+date[1];
         image = dayDataRes.forecastday[i].day.condition.icon;
-        minDegree = dayDataRes.forecastday[i].day.mintemp_c + "&deg";
-        maxDegree = dayDataRes.forecastday[i].day.maxtemp_c + "&deg";
+        minDegree = Math.round(dayDataRes.forecastday[i].day.mintemp_c) + "&deg";
+        maxDegree = Math.round(dayDataRes.forecastday[i].day.maxtemp_c) + "&deg";
         wind = dayDataRes.forecastday[i].day.maxwind_mph + "mph";
         rain = dayDataRes.forecastday[i].day.daily_chance_of_rain + "%";
         
