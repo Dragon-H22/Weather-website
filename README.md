@@ -4,4 +4,5 @@
 
 <br>
 
-![Weather website](https://user-images.githubusercontent.com/88390970/198747695-d0dab394-8870-486f-9b4f-daff8e680763.png)
+
+![Weather website](https://user-images.githubusercontent.com/88390970/198748463-9eb070d1-3d87-4b57-9d32-4a998f23e0fe.png)
